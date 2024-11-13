@@ -1,0 +1,12 @@
+dbt_bike_sales:
+  outputs:
+    dev:
+      type: postgres
+      threads: 4
+      host: dw
+      port: 5432
+      user: "{{ env_var('POSTGRES_USER') }}"
+      pass: "{{ env_var('POSTGRES_PASSWORD') }}"
+      dbname: europe_bike_sales
+      schema: dev
+  target: dev
